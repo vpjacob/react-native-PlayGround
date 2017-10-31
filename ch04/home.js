@@ -106,13 +106,15 @@ export default class home extends Component {
 
     _renderRow(rowData, sectionID, rowID) {
         return (
-            <TouchableHighlight onPress={() => {const {navigator} = this.props;
+            <TouchableHighlight onPress={() => {
+                // const navigator = this.props.navigator;
+                const navigator = this.props.navigator;
                 if (navigator) {
                     navigator.push({
                         name: 'detail',
                         component: Detail,
-                        params: {
-                            productTitle: product.title
+                        param:{
+                            productTitle:rowData.title
                         }
                     });
                 }}}>
